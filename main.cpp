@@ -1,9 +1,8 @@
 #include <cassert>
-#include <vector>
 #include <iostream>
 
 using namespace std;
-int minimum(std::string);
+int minimum_to_remove(std::string);
 
 int main()
 {
@@ -11,16 +10,16 @@ int main()
   auto testcase1 = ")(";
   auto testcase2 = "()())()";
     
-  cout << "Test Case )( :"<<minimum(testcase1) <<endl;
-  cout << "Test Case ()())():"<<minimum(testcase2) <<endl;
+  cout << "Test Case )( :"<<minimum_to_remove(testcase1) <<endl;
+  cout << "Test Case ()())():"<<minimum_to_remove(testcase2) <<endl;
 
-  assert(minimum(testcase1) ==2);
-  assert(minimum(testcase2) ==1);
+  assert(minimum_to_remove(testcase1) == 2);
+  assert(minimum_to_remove(testcase2) == 1);
   return 0;
 
 }
 
-int minimum(std::string input){
+int minimum_to_remove(std::string input){
   auto right = 0;
   auto needRemoved = 0;
   for ( auto it = input.begin() ; it < input.end(); it++)
